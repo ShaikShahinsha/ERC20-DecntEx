@@ -43,9 +43,13 @@ contract DeExchange{
     }
 
     function buytoken(uint noofTokens) external payable {
-        require(noofTokens <= associatedToken.balanceOf(address(this)),"not enough tokens");
+        require(noofTokens <= getTokenBalance(),"not enough tokens");
         uint priceofTokens = getPrice(noofTokens);
         require(msg.value == priceofTokens , "not suffient money ");
         associatedToken.transfer(msg.sender, noofTokens);
+    }
+
+    function getTokenBalance() public view returns(uint){
+        return associatedToken.balanceOf(address(this));
     }
 }
