@@ -11,7 +11,7 @@ describe("VirToken", () => {
     [owner,addr1,addr2] = await ethers.getSigners();
     const VirToken = await ethers.getContractFactory("VirToken");
     token = await VirToken.deploy(tokenSupply);
-
+    console.log("token contract address",token.address);
   });
 
   describe("Deployment",() => {

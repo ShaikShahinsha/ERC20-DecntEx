@@ -2,7 +2,7 @@
 pragma solidity ^0.8.19;
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
-contract DeExchange{
+contract DecExchange{
     IERC20 public associatedToken;
     uint price;
     address owner;
